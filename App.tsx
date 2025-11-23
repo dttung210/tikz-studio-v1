@@ -273,7 +273,7 @@ const App: React.FC = () => {
               <div className="max-w-2xl w-full">
                 
                 {/* Text Input Hero (Shared for Text, Table, Graph) */}
-                {activeTab !== AppTab.IMAGE_TO_TIKZ && activeTab !== AppTab.TIKZ_PREVIEW && (
+                {activeTab !== AppTab.IMAGE_TO_TIKZ && (
                   <div className="text-center space-y-8">
                     <div className="space-y-2">
                        <h2 className="text-3xl font-bold text-slate-800 tracking-tight">{getHeroInfo().title}</h2>
@@ -282,7 +282,11 @@ const App: React.FC = () => {
                     <div className="bg-white p-2 rounded-2xl shadow-xl shadow-teal-900/5 border border-slate-200 focus-within:ring-4 focus-within:ring-teal-100 transition-all">
                       <textarea 
                         className="w-full h-32 p-4 border-none focus:ring-0 resize-none text-lg text-slate-700 placeholder-slate-300"
-                        placeholder={activeTab === AppTab.VARIATION_TABLE ? "e.g. Hàm số y = x^3 - 3x + 1 trên đoạn [-2, 2]" : "e.g. A red triangle ABC..."}
+                        placeholder={
+                          activeTab === AppTab.VARIATION_TABLE 
+                            ? "e.g. Hàm số y = x^3 - 3x + 1 trên đoạn [-2, 2]" 
+                            : "e.g. A red triangle ABC... (Mô tả hình học, đồ thị bằng tiếng Việt hoặc Anh)"
+                        }
                         value={inputText}
                         onChange={(e) => setInputText(e.target.value)}
                         onKeyDown={(e) => { if(e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleTextSubmit(); }}}

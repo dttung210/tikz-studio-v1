@@ -1,5 +1,5 @@
 {
-  "name": " TikZ AI Studio",
+  "name": "TikZ AI Studio",
   "description": "A powerful AI-driven tool to generate, edit, and preview TikZ (LaTeX) graphics from text descriptions and images.",
   "requestFramePermissions": []
 }
